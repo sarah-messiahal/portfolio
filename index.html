@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sarah Messiahal | Portfolio">
+    <title>Sarah Messiahal | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: white;
+            margin: 0;
+            overflow-x: hidden;
+            height: 100%;
+            scroll-behavior: smooth; 
+        }
+
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            pointer-events: none; 
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 10;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+        nav .logo img {
+    width: 60px; 
+    height: auto; 
+}
+
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+       
+        section {
+            padding: 120px 20px;
+            text-align: center;
+            z-index: 1;
+        }
+        #projects h1 {
+    font-size: 50px; 
+    font-weight: bold;
+}
+#contact {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: transparent; 
+}
+
+#contact h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #aaa;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-card h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.contact-card button {
+    background-color: #ff5f6d;
+    border: none;
+    padding: 12px;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-card button:hover {
+    background-color: #ffc371;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px); 
+}
+
+
+        .card-section {
+            margin-top: 50px;
+        }
+
+        .card {
+            display: inline-block;
+            width: 280px;
+            margin: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            font-size: 28px;
+            margin-top: 15px;
+        }
+
+        .card p {
+            font-size: 18px;
+            margin: 12px 0;
+        }
+
+        .card button {
+            background-color: #ff5f6d;
+            border: none;
+            padding: 12px;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #ffc371;
+        }
+
+        footer {
+            position: relative;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            color: #aaa;
+        }
+
+        #home h1 {
+            font-size: 60px;
+            font-weight: bold;
+        }
+        #home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    padding-top: 20px; 
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#home p {
+    font-size: 26px;
+    color: #aaa;
+}
+
+
+        #home p {
+            font-size: 26px;
+            color: #aaa;
+        }
+
+        #cards h1 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        #rewards, #blog {
+            height: 100vh;
+        }
+
+        #aboutme h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+        .about-container {
+            
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .about-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            width: 70%;
+            max-width: 800px;
+            text-align: left;
+
+        }
+
+        .about-card h3 {
+            
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .about-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .about-card ul li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .about-card button {
+            margin-top: 20px;
+            background-color: #ff5f6d;
+            border: none;
+            padding: 12px;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .about-card button:hover {
+            background-color: #ffc371;
+        }
+        video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+}
+
+video[style*="display: block"] {
+    opacity: 1;
+}
+
+
+    </style>
+</head>
+<body>
+         
+        <video id="background-video-home" autoplay muted loop playsinline style="display:block;">
+            <source src="assets/videos/code3.mp4" type="video/mp4">
+        </video>
+        
+        <video id="background-video-projects" autoplay muted loop playsinline style="display:none;">
+            <source src="assets/videos/code2.mp4" type="video/mp4">
+        </video>
+        
+        <video id="background-video-aboutme" autoplay muted loop playsinline style="display:none;">
+            <source src="assets/videos/code4.mp4" type="video/mp4">
+        </video>
+        
+        <video id="background-video-contact" autoplay muted loop playsinline style="display:none;">
+            <source src="assets/videos/code1.mp4" type="video/mp4">
+        </video>
+    
+        <section id="home" class="content">
+            <h1>Hi, I'm Sarah</h1>
+            <p>Frontend & ApplicationDeveloper  | Passionate about Clean UI</p>
+        </section>
+
+
+        <section id="projects" class="content">
+            <h1>My Projects</h1>
+            <p>Here are some of my latest projects.</p>
+            <div class="contact-container">
+                <div class="contact-card">
+                    
+                    <h3>Gender-Listing-App</h3>
+                    <p>Gender Listing application, identifying using colors, pink-woman, blue-men. UI/UX</p>
+                    <button onclick="window.open('https://gitlab.com/users/sarah_messiahal/projects', '_blank')">View Project</button>
+                </div>
+        
+                <div class="contact-card">
+                    <h3>QUIZ-API</h3>
+                    <p>A Quiz application using third-party API integration. Built with Flutter and Dart.</p>
+                    <button onclick="window.open('https://gitlab.com/users/sarah_messiahal/projects', '_blank')">View Project</button>
+                </div>
+        
+                <div class="contact-card">
+                    <h3>Feedback-Firebase</h3>
+                    <p>A feedback application interacting with Firebase.</p>
+                    <button onclick="window.open('https://gitlab.com/users/sarah_messiahal/projects', '_blank')">View Project</button>
+                </div>
+            </div>
+        </section>
+        
+
+        
+        <section id="aboutme" class = "content">
+            <h1>About Me</h1>
+            <div class="contact-container">
+
+                <div class="contact-card">
+                    <h3>specialize</h3>
+                    
+                    <p>I am a passionate IT professional with 3 years of experience working in Dubai’s dynamic IT sector. I specialize in Frontend Development, Web Technologies, and Mobile Application Development</p>
+                   
+                </div>
+
+        </section>
+
+
+        <section id="contact" class="content">
+            <h1>Contact Me</h1>
+            <p>Feel free to get in touch via the following options.</p>
+            <div class="contact-container">
+
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p>Get in touch with me via email for any inquiries.</p>
+                    <button onclick="window.location.href='mailto:messiahal2000@gmail.com'">Send Email</button>
+                </div>
+        
+                <div class="contact-card">
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me on LinkedIn for professional opportunities.</p>
+                    <button onclick="window.open('https://www.linkedin.com/in/sarah-messiahal-b1978a215', '_blank')">Visit LinkedIn</button>
+                </div>
+        
+                <div class="contact-card">
+                    <h3>GitLab</h3>
+                    <p>Check out my projects and collaborations on GitLab.</p>
+                    <button onclick="window.open('https://gitlab.com/users/sarah_messiahal/projects', '_blank')">Visit GitLab</button>
+                </div>
+            </div>
+        </section>
+        
+   
+        <script>
+            window.addEventListener('scroll', function() {
+                let scrollPosition = window.scrollY;
+        
+                const homeSection = document.getElementById('home');
+                const projectsSection = document.getElementById('projects');
+                const aboutMeSection = document.getElementById('aboutme');
+                const contactSection = document.getElementById('contact');
+        
+                const homeVideo = document.getElementById('background-video-home');
+                const projectsVideo = document.getElementById('background-video-projects');
+                const aboutMeVideo = document.getElementById('background-video-aboutme');
+                const contactVideo = document.getElementById('background-video-contact');
+        
+                if (isElementInViewport(homeSection)) {
+                    switchVideo(homeVideo);
+                } else if (isElementInViewport(projectsSection)) {
+                    switchVideo(projectsVideo);
+                } else if (isElementInViewport(aboutMeSection)) {
+                    switchVideo(aboutMeVideo);
+                } else if (isElementInViewport(contactSection)) {
+                    switchVideo(contactVideo);
+                }
+            });
+        
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return rect.top >= 0 && rect.bottom <= window.innerHeight;
+            }
+        
+            function switchVideo(activeVideo) {
+                document.querySelectorAll('video').forEach(video => {
+                    video.style.display = 'none';
+                    video.style.opacity = '0';
+                });
+                activeVideo.style.display = 'block';
+                setTimeout(() => activeVideo.style.opacity = '1', 100);
+            }
+        </script>
+        
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/crown1.jpg" alt="Logo">
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#aboutme">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <footer>
+        <p>&copy; 2025 Sarah Messiahal. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
